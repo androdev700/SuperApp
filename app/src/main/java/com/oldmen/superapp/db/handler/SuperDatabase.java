@@ -22,6 +22,7 @@ public abstract class SuperDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             SuperDatabase.class, "super.db")
+                            .allowMainThreadQueries()
                             .build();
                 }
             }

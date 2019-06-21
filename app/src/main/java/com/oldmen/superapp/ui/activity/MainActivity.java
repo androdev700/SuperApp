@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.ui.activity.addChannel.AddActivity;
-import com.oldmen.superapp.ui.fragment.HomeFragment;
+import com.oldmen.superapp.ui.fragment.home.HomeFragment;
 import com.oldmen.superapp.ui.fragment.ProfileFragment;
 import com.oldmen.superapp.ui.fragment.discovery.DiscoveryFragment;
 

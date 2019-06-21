@@ -19,10 +19,14 @@ public class Channel {
     @ColumnInfo(name = "channel_type")
     private String mType;
 
-    public Channel(@NonNull String id, String name, String type) {
+    @ColumnInfo(name = "description")
+    private String mDescription;
+
+    public Channel(@NonNull String id, String name, String type, String description) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
+        this.mDescription = description;
     }
 
     public String getId() {
@@ -35,5 +39,9 @@ public class Channel {
 
     public String getType() {
         return mType;
+    }
+
+    public String getDescription() {
+        return mDescription;
     }
 }
