@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/discovery_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,24 +17,27 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/pt_sans"
                 android:text="This is title"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="12sp"
-                android:text="Music - Movies"/>
+                android:fontFamily="@font/pt_sans"
+                android:text="Music - Movies"
+                android:textSize="12sp" />
 
 
             <LinearLayout
@@ -47,39 +47,43 @@
                 android:gravity="center">
 
                 <!--<RatingBar-->
-                    <!--android:id="@+id/rating_bar"-->
-                    <!--android:isIndicator="true"-->
-                    <!--android:numStars="5"-->
-                    <!--android:stepSize="0.5"-->
-                    <!--style="?android:attr/ratingBarStyleSmall"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:rating="4.5"-->
-                    <!--/>-->
+                <!--android:id="@+id/rating_bar"-->
+                <!--android:isIndicator="true"-->
+                <!--android:numStars="5"-->
+                <!--android:stepSize="0.5"-->
+                <!--style="?android:attr/ratingBarStyleSmall"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:rating="4.5"-->
+                <!--/>-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="Members : "/>
+                    android:fontFamily="@font/pt_sans"
+                    android:text="Members : "
+                    android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/rating_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:textSize="16sp"
-                    android:text="50"/>
+                    android:fontFamily="@font/pt_sans"
+                    android:text="50"
+                    android:textSize="16sp" />
             </LinearLayout>
+
         </LinearLayout>
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="50dp"
             android:scaleType="fitXY"
-            android:src="@drawable/demo"
-            android:layout_alignParentEnd="true"/>
+            android:src="@drawable/demo" />
 
     </RelativeLayout>
 
@@ -87,8 +91,9 @@
         android:id="@+id/discription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:fontFamily="@font/pt_sans"
+        android:text="Bored? Enable story stream binhe on entertaining stories narrated by handpicked top creators"
         android:textColor="#000"
-        android:text="Bored? Enable story stream binhe on entertaining stories narrated by handpicked top creators"/>
+        android:textSize="16sp" />
 
 </LinearLayout>
