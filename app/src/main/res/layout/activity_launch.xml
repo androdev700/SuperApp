@@ -16,7 +16,7 @@
         android:fontFamily="@font/pt_sans"
         android:textColor="@android:color/white"
         android:textSize="40sp"
-        android:text="Oyye" />
+        android:text="Super" />
 
     <ImageView
         android:layout_width="400dp"

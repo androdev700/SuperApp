@@ -18,4 +18,7 @@ public interface ChannelDao {
 
     @Query("SELECT * FROM Channel")
     LiveData<List<Channel>> getAllChannels();
+
+    @Query("SELECT * FROM Channel")
+    List<Channel> getAllChannelsSync();
 }

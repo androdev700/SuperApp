@@ -15,22 +15,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.oldmen.superapp.R;
+import com.oldmen.superapp.db.dao.ChannelDao;
+import com.oldmen.superapp.db.handler.SuperDatabase;
+import com.oldmen.superapp.db.model.Channel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.DataHolder> {
 
     private String TAG = DiscoveryAdapter.class.getSimpleName();
     private Context mContext;
-
+    private List<String> mChannels;
     private JSONArray mList;
 
-    public DiscoveryAdapter(Context context) {
+    public DiscoveryAdapter(Context context, List<String> channels) {
         mContext = context;
+        mChannels = channels;
         try {
-//            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
             mList = new JSONArray(Data.DISCOVERY_STRING);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -55,6 +60,13 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             holder.description.setText(json.getString("description"));
             holder.memberCount.setText(json.getString("members"));
             Glide.with(mContext).load(json.getString("logo")).into(holder.image);
+
+            if (mChannels.contains(json.getString("id"))) {
+                holder.mFollowButton.setText("Followed");
+            } else {
+                holder.mFollowButton.setText("Follow");
+            }
+
         } catch (JSONException e) {
             Log.e(TAG, "onBindViewHolder: Error in extracting data");
         }
@@ -97,6 +109,22 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(mContext, "You followed this channel", Toast.LENGTH_SHORT).show();
+                    try {
+                        JSONObject object = mList.getJSONObject(getAdapterPosition());
+                        Channel channel = new Channel(
+                                object.getString("id"),
+                                object.getString("title"),
+                                "public",
+                                object.getString("description"),
+                                object.getString("logo")
+                        );
+                        mFollowButton.setText("Followed");
+                        ChannelDao channelDao = SuperDatabase.getInstance(mContext).channelDao();
+                        channelDao.insert(channel);
+                        Toast.makeText(mContext, "You followed " + channel.getName(), Toast.LENGTH_LONG).show();
+                    } catch (Exception ex) {
+                        Log.e(TAG, "onBindViewHolder: Error in extracting data");
+                    }
                 }
             });
         }

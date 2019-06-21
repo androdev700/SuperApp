@@ -13,7 +13,7 @@ public class HomeViewModelFactory implements ViewModelProvider.Factory {
     private Context context;
     private SuperDatabase superDatabase;
 
-    HomeViewModelFactory(Context context, SuperDatabase superDatabase) {
+    public HomeViewModelFactory(Context context, SuperDatabase superDatabase) {
         this.context = context;
         this.superDatabase = superDatabase;
     }

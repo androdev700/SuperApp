@@ -22,11 +22,15 @@ public class Channel {
     @ColumnInfo(name = "description")
     private String mDescription;
 
-    public Channel(@NonNull String id, String name, String type, String description) {
+    @ColumnInfo(name = "channel_image")
+    private String mChannelImage;
+
+    public Channel(@NonNull String id, String name, String type, String description, String channelImage) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
         this.mDescription = description;
+        this.mChannelImage = channelImage;
     }
 
     public String getId() {
@@ -43,5 +47,9 @@ public class Channel {
 
     public String getDescription() {
         return mDescription;
+    }
+
+    public String getChannelImage() {
+        return mChannelImage;
     }
 }

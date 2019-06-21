@@ -20,7 +20,11 @@ public class HomeViewModel extends ViewModel {
         this.superDatabase = superDatabase;
     }
 
-    LiveData<List<Channel>> getChannelLiveData() {
+    public LiveData<List<Channel>> getChannelLiveData() {
         return superDatabase.channelDao().getAllChannels();
+    }
+
+    public List<Channel> getChannels() {
+        return superDatabase.channelDao().getAllChannelsSync();
     }
 }

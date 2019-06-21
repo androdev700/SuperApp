@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.oldmen.superapp.db.dao.ChannelDao;
 import com.oldmen.superapp.db.model.Channel;
 
-@Database(entities = {Channel.class}, version = 1)
+@Database(entities = {Channel.class}, version = 2)
 public abstract class SuperDatabase extends RoomDatabase {
 
     private static volatile SuperDatabase INSTANCE;
@@ -22,6 +22,7 @@ public abstract class SuperDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             SuperDatabase.class, "super.db")
+                            .fallbackToDestructiveMigration()
                             .allowMainThreadQueries()
                             .build();
                 }
