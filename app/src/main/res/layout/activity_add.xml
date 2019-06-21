@@ -15,7 +15,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_filter_drama_black_24dp" />
+            android:src="@drawable/ic_user_light" />
 
         <EditText
             android:id="@+id/name"
