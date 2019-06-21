@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.ui.activity.addchannel.AddActivity;
 import com.oldmen.superapp.ui.fragment.HomeFragment;
+import com.oldmen.superapp.ui.fragment.discovery.DiscoveryFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         getMenuInflater().inflate(R.menu.menu_discovery, mOptionsMenu);
                     }
                     mfragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    mfragmentTransaction.replace(R.id.main_frame, new HomeFragment());
+                    mfragmentTransaction.replace(R.id.main_frame, new DiscoveryFragment());
                     mfragmentTransaction.commit();
                     return true;
             }

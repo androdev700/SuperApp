@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.DiscoveryFragment">
+    tools:context=".ui.fragment.discovery.DiscoveryFragment">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discovery_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </FrameLayout>
