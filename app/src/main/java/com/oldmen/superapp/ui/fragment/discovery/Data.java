@@ -3,6 +3,7 @@ package com.oldmen.superapp.ui.fragment.discovery;
 public class Data {
 
     static final String DISCOVERY_STRING = "[{\"id\":\"a1\",\"title\":\"Pratilipi Hackathon\",\"category\":\"Update\",\"description\":\"Know whats going on in the pratilipi hackathon\", \"members\":40, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
+            "{\"id\":\"a17\",\"title\":\"Pratilipi\",\"category\":\"Literature\",\"description\":\"India's largest self publishing platform\", \"members\":\"4,00,000\", \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
             "{\"id\":\"a2\",\"title\":\"Unacademy\",\"category\":\"Education\",\"description\":\"India's largest learning platform\", \"members\":400, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/unacademy.jpg\"}," +
             "{\"id\":\"a3\",\"title\":\"Netflix\",\"category\":\"Entertainment\",\"description\":\"Watch anywhere\",\"rating\":4, \"members\":832, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/Netflix_icon.png\"}," +
             "{\"id\":\"a4\",\"title\":\"Zomato\",\"category\":\"Food\",\"description\":\"Find the best restaurants, cafés, and bars in Bengaluru\",\"rating\":4, \"members\":900, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/zomato.png\"}," +
