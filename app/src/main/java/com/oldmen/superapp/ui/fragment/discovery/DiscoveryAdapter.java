@@ -25,12 +25,12 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
     private String TAG = DiscoveryAdapter.class.getSimpleName();
     private Context mContext;
 
-    private JSONArray  mList;
+    private JSONArray mList;
 
     public DiscoveryAdapter(Context context) {
         mContext = context;
         try {
-//            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
+//            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
             mList = new JSONArray(Data.DISCOVERY_STRING);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             JSONObject json = mList.getJSONObject(position);
             holder.title.setText(json.getString("title"));
             holder.category.setText(json.getString("category"));
-            holder.discription.setText(json.getString("description"));
+            holder.description.setText(json.getString("description"));
             holder.memberCount.setText(json.getString("members"));
             Glide.with(mContext).load(json.getString("logo")).into(holder.image);
         } catch (JSONException e) {
@@ -71,7 +71,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
         private TextView title;
         private TextView category;
         private TextView memberCount;
-        private TextView discription;
+        private TextView description;
         private ImageView image;
         private TextView mFollowButton;
 
@@ -82,7 +82,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             title = itemView.findViewById(R.id.title);
             category = itemView.findViewById(R.id.category);
             memberCount = itemView.findViewById(R.id.rating_count);
-            discription = itemView.findViewById(R.id.discription);
+            description = itemView.findViewById(R.id.discription);
             image = itemView.findViewById(R.id.logo);
             mFollowButton = itemView.findViewById(R.id.follow);
 
