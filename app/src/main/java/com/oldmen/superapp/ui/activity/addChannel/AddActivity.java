@@ -1,4 +1,4 @@
-package com.oldmen.superapp.ui.activity.addchannel;
+package com.oldmen.superapp.ui.activity.addChannel;
 
 import android.content.Context;
 import android.content.Intent;

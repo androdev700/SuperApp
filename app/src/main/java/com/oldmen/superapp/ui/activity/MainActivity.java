@@ -12,13 +12,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.oldmen.superapp.R;
-import com.oldmen.superapp.ui.activity.addchannel.AddActivity;
+import com.oldmen.superapp.ui.activity.addChannel.AddActivity;
 import com.oldmen.superapp.ui.fragment.HomeFragment;
+import com.oldmen.superapp.ui.fragment.ProfileFragment;
 import com.oldmen.superapp.ui.fragment.discovery.DiscoveryFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentTransaction mfragmentTransaction;
+    private FragmentTransaction mFragmentTransaction;
     private Menu mOptionsMenu;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -28,22 +29,33 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    getSupportActionBar().setTitle("Home");
                     if (mOptionsMenu != null) {
                         mOptionsMenu.clear();
                         getMenuInflater().inflate(R.menu.menu_home, mOptionsMenu);
                     }
-                    mfragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    mfragmentTransaction.replace(R.id.main_frame, new HomeFragment());
-                    mfragmentTransaction.commit();
+                    mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mFragmentTransaction.replace(R.id.main_frame, new HomeFragment());
+                    mFragmentTransaction.commit();
                     return true;
                 case R.id.navigation_dashboard:
+                    getSupportActionBar().setTitle("Discovery");
                     if (mOptionsMenu != null) {
                         mOptionsMenu.clear();
                         getMenuInflater().inflate(R.menu.menu_discovery, mOptionsMenu);
                     }
-                    mfragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    mfragmentTransaction.replace(R.id.main_frame, new DiscoveryFragment());
-                    mfragmentTransaction.commit();
+                    mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mFragmentTransaction.replace(R.id.main_frame, new DiscoveryFragment());
+                    mFragmentTransaction.commit();
+                    return true;
+                case R.id.navigation_profile:
+                    getSupportActionBar().setTitle("Profile");
+                    if (mOptionsMenu != null) {
+                        mOptionsMenu.clear();
+                    }
+                    mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mFragmentTransaction.replace(R.id.main_frame, new ProfileFragment());
+                    mFragmentTransaction.commit();
                     return true;
             }
             return false;
