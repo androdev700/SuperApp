@@ -6,4 +6,7 @@
     <color name="primaryText">#333333</color>
     <color name="secondaryText">#999999</color>
     <color name="titleColor">#119492</color>
+
+    <color name="messages_incoming_shadow_bg_color">#d9d9d9</color>
+    <color name="messages_incoming_bg_color">#d9d9d9</color>
 </resources>

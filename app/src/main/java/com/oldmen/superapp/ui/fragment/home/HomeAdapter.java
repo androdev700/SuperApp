@@ -1,6 +1,8 @@
 package com.oldmen.superapp.ui.fragment.home;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.db.model.Channel;
+import com.oldmen.superapp.ui.activity.viewChannel.ViewChannelActivity;
 
 import java.util.List;
 
@@ -45,7 +49,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
 
         if (channel.getChannelImage() != null) {
             Glide.with(mContext)
-                    .load("https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png")
+                    .load(channel.getChannelImage())
                     .into(holder.image);
         } else {
             holder.image.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_user_light));
@@ -75,7 +79,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
             card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(mContext, "Coming Soon", Toast.LENGTH_SHORT).show();
+                    // Open description activity
+                    Channel channel = mChannels.get(getAdapterPosition());
+                    if (channel.getDestinationType() != null) {
+                        if (channel.getDestinationType().equals("WEB")) {
+                            String url = channel.getUrl();
+                            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                            CustomTabsIntent customTabsIntent = builder.build();
+                            customTabsIntent.launchUrl(mContext, Uri.parse(url));
+                        } else {
+                            // Open description activity
+                            Intent intent = new Intent(mContext, ViewChannelActivity.class);
+                            mContext.startActivity(intent);
+                        }
+                    }
 
                 }
             });

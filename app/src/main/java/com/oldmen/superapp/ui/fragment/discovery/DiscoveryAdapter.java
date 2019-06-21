@@ -1,6 +1,7 @@
 package com.oldmen.superapp.ui.fragment.discovery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,10 +17,12 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.oldmen.superapp.Data;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.db.dao.ChannelDao;
 import com.oldmen.superapp.db.handler.SuperDatabase;
 import com.oldmen.superapp.db.model.Channel;
+import com.oldmen.superapp.ui.activity.viewChannel.ViewChannelActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -112,6 +115,8 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                             customTabsIntent.launchUrl(mContext, Uri.parse(url));
                         } else {
                             // Open description activity
+                            Intent intent = new Intent(mContext, ViewChannelActivity.class);
+                            mContext.startActivity(intent);
                         }
                     } catch (Exception ex) {
                         Log.e(TAG, "DataHolder: Error in extracting data");
