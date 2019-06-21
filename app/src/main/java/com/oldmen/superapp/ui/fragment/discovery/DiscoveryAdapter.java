@@ -32,8 +32,10 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
     public DiscoveryAdapter(Context context) {
         mContext = context;
         try {
-            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
+//            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
+            mList = new JSONArray(Data.discoveryString);
         } catch (JSONException e) {
+            e.printStackTrace();
             Log.e(TAG, "DiscoveryAdapter: Error in creating json");
         }
     }
@@ -54,7 +56,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             holder.category.setText(json.getString("category"));
             holder.discription.setText(json.getString("description"));
             holder.memberCount.setText(json.getString("members"));
-            Glide.with(mContext).load("https://github.com/androdev700/SuperApp/raw/master/logos/Netflix_icon.png").into(holder.image);
+            Glide.with(mContext).load(json.getString("logo")).into(holder.image);
         } catch (JSONException e) {
             Log.e(TAG, "onBindViewHolder: Error in extracting data");
         }
@@ -62,7 +64,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
 
     @Override
     public int getItemCount() {
-        return mList.length();
+        return mList == null ? 0 : mList.length();
     }
 
     class DataHolder extends RecyclerView.ViewHolder {
@@ -70,11 +72,10 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
         private LinearLayout card;
         private TextView title;
         private TextView category;
-//        private RatingBar rating;
         private TextView memberCount;
         private TextView discription;
         private ImageView image;
-
+        private TextView mFollowButton;
 
         public DataHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,15 +83,22 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             card = itemView.findViewById(R.id.discovery_card);
             title = itemView.findViewById(R.id.title);
             category = itemView.findViewById(R.id.category);
-//            rating = itemView.findViewById(R.id.rating_bar);
             memberCount = itemView.findViewById(R.id.rating_count);
             discription = itemView.findViewById(R.id.discription);
             image = itemView.findViewById(R.id.logo);
+            mFollowButton = itemView.findViewById(R.id.follow);
 
             card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(mContext, "This is dummy item", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Coming Soon", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            mFollowButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(mContext, "You followed this channel", Toast.LENGTH_SHORT).show();
                 }
             });
         }

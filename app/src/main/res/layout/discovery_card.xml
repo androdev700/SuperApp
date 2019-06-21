@@ -3,87 +3,105 @@
     android:id="@+id/discovery_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="top"
-    android:layout_marginLeft="7dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginRight="7dp"
-    android:layout_marginBottom="6dp"
+    android:layout_marginTop="10dp"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pt_sans"
-                android:text="This is title"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pt_sans"
-                android:text="Music - Movies"
-                android:textSize="12sp" />
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:gravity="center">
-
-                <!--<RatingBar-->
-                <!--android:id="@+id/rating_bar"-->
-                <!--android:isIndicator="true"-->
-                <!--android:numStars="5"-->
-                <!--android:stepSize="0.5"-->
-                <!--style="?android:attr/ratingBarStyleSmall"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:rating="4.5"-->
-                <!--/>-->
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/pt_sans"
-                    android:text="Members : "
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/rating_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:fontFamily="@font/pt_sans"
-                    android:text="50"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="30dp"
             android:scaleType="fitXY"
-            android:src="@drawable/demo" />
+            android:layout_alignParentStart="true"/>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_toEndOf="@id/logo">
+            <LinearLayout
+                android:id="@+id/title_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pt_sans"
+                    android:text="This is title"
+                    android:textColor="@color/titleColor"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pt_sans"
+                    android:textSize="12sp"
+                    android:text="Music - Movies"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/follow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/pt_sans"
+                android:background="@drawable/border"
+                android:layout_margin="10dp"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingEnd="10dp"
+                android:textColor="#119492"
+                android:textSize="16sp"
+                android:layout_alignParentEnd="true"
+                android:text="Follow"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true">
+
+                <!--<RatingBar-->
+                    <!--android:id="@+id/rating_bar"-->
+                    <!--android:isIndicator="true"-->
+                    <!--android:numStars="5"-->
+                    <!--android:stepSize="0.5"-->
+                    <!--style="?android:attr/ratingBarStyleSmall"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:rating="4.5"-->
+                    <!--/>-->
+
+                <TextView
+                    android:id="@+id/rating_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pt_sans"
+                    android:textSize="16sp"
+                    android:text="50"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/pt_sans"
+                    android:textSize="16sp"
+                    android:text=" members"/>
+            </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -91,9 +109,18 @@
         android:id="@+id/discription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:fontFamily="@font/pt_sans"
-        android:text="Bored? Enable story stream binhe on entertaining stories narrated by handpicked top creators"
-        android:textColor="#000"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColor="@color/primaryText"
+        android:text="Bored? Enable story stream binhe on entertaining stories narrated by handpicked top creators"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/secondaryText"/>
 
 </LinearLayout>
