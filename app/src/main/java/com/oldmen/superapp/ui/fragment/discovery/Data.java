@@ -2,7 +2,7 @@ package com.oldmen.superapp.ui.fragment.discovery;
 
 public class Data {
 
-    public static final String discoveryString = "[{\"title\":\"Pratilipi Hackathon\",\"category\":\"Update\",\"description\":\"Know whats going on in the pratilipi hackathon\", \"members\":40, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
+    static final String DISCOVERY_STRING = "[{\"title\":\"Pratilipi Hackathon\",\"category\":\"Update\",\"description\":\"Know whats going on in the pratilipi hackathon\", \"members\":40, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
             "{\"title\":\"Unacademy\",\"category\":\"Education\",\"description\":\"India's largest learning platform\", \"members\":400, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/unacademy.jpg\"}," +
             "{\"title\":\"Netflix\",\"category\":\"Entertainment\",\"description\":\"Watch anywhere\",\"rating\":4, \"members\":832, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/Netflix_icon.png\"}," +
             "{\"title\":\"Zomato\",\"category\":\"Food\",\"description\":\"Find the best restaurants, cafés, and bars in Bengaluru\",\"rating\":4, \"members\":900, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/zomato.png\"}," +

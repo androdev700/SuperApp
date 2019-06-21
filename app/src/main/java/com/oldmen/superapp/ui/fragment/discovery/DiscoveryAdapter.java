@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -33,7 +31,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
         mContext = context;
         try {
 //            mList = new JSONArray("[{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"description\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000},{\"title\":\"Danik Bhaskar\",\"category\":\"News\",\"discription\":\"This is very popular News channel\",\"rating\":4, \"members\":4000}]");
-            mList = new JSONArray(Data.discoveryString);
+            mList = new JSONArray(Data.DISCOVERY_STRING);
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e(TAG, "DiscoveryAdapter: Error in creating json");
