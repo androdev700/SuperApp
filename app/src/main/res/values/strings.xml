@@ -3,7 +3,40 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <array name="basic_permissions">
+        <item>Like</item>
+        <item>Comment</item>
+        <item>Share</item>
+        <item>Post</item>
+    </array>
+
+    <array name="mods_permissions">
+        <item>Like</item>
+        <item>Comment</item>
+        <item>Share</item>
+        <item>Post</item>
+        <item>Add Member</item>
+        <item>Ban Member</item>
+        <item>Remove Member</item>
+    </array>
+
+    <array name="admin_permissions">
+        <item>Like</item>
+        <item>Comment</item>
+        <item>Share</item>
+        <item>Post</item>
+        <item>Add Member</item>
+        <item>Ban Member</item>
+        <item>Remove Member</item>
+        <item>Add Moderator</item>
+        <item>Ban Moderator</item>
+        <item>Remove Moderator</item>
+    </array>
+
 </resources>

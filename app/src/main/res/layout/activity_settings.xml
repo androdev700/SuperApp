@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.activity.addchannel.SettingsActivity">
+
+    <TextView
+        android:id="@+id/anyone_can"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:text="Anyone Permissions"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/members_can"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:text="Members Permissions"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/mods_can"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:text="Moderators Permissions"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/admin_can"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:text="Admin Permissions"
+        android:textSize="18sp" />
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.oldmen.superapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.oldmen.superapp.R;
+import com.oldmen.superapp.ui.activity.addchannel.AddActivity;
 import com.oldmen.superapp.ui.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.add_more:
-                // Open Add Screen
+                startActivity(new Intent(this, AddActivity.class));
                 return true;
             case R.id.search_more:
                 // Open Search Screen

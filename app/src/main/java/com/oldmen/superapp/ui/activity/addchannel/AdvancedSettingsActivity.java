@@ -1,16 +1,16 @@
-package com.oldmen.superapp.ui.activity;
-
-import android.os.Bundle;
+package com.oldmen.superapp.ui.activity.addchannel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
+
 import com.oldmen.superapp.R;
 
-public class AddActivity extends AppCompatActivity {
+public class AdvancedSettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_advanced_settings);
     }
 }
