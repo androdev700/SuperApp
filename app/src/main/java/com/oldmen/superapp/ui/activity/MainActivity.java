@@ -1,4 +1,4 @@
-package com.oldmen.superapp;
+package com.oldmen.superapp.ui.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.oldmen.superapp.R;
+import com.oldmen.superapp.ui.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
