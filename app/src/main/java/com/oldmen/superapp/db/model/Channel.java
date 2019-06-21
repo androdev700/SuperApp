@@ -25,12 +25,20 @@ public class Channel {
     @ColumnInfo(name = "channel_image")
     private String mChannelImage;
 
-    public Channel(@NonNull String id, String name, String type, String description, String channelImage) {
+    @ColumnInfo(name = "destination_type")
+    private String mDestinationType;
+
+    @ColumnInfo(name = "url")
+    private String mUrl;
+
+    public Channel(@NonNull String id, String name, String type, String description, String channelImage, String destinationType, String url) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
         this.mDescription = description;
         this.mChannelImage = channelImage;
+        this.mDestinationType = destinationType;
+        this.mUrl = url;
     }
 
     public String getId() {
@@ -51,5 +59,13 @@ public class Channel {
 
     public String getChannelImage() {
         return mChannelImage;
+    }
+
+    public String getDestinationType() {
+        return mDestinationType;
+    }
+
+    public String getUrl() {
+        return mUrl;
     }
 }

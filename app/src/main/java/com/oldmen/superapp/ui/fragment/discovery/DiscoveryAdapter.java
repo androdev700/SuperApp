@@ -1,6 +1,7 @@
 package com.oldmen.superapp.ui.fragment.discovery;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -101,7 +103,19 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(mContext, "Coming Soon", Toast.LENGTH_SHORT).show();
+                    try {
+                        JSONObject object = mList.getJSONObject(getAdapterPosition());
+                        if (object.getString("type").equals("WEB")) {
+                            String url = object.getString("url");
+                            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                            CustomTabsIntent customTabsIntent = builder.build();
+                            customTabsIntent.launchUrl(mContext, Uri.parse(url));
+                        } else {
+                            // Open description activity
+                        }
+                    } catch (Exception ex) {
+                        Log.e(TAG, "DataHolder: Error in extracting data");
+                    }
                 }
             });
 
@@ -116,14 +130,16 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                                 object.getString("title"),
                                 "public",
                                 object.getString("description"),
-                                object.getString("logo")
+                                object.getString("logo"),
+                                object.getString("type"),
+                                object.getString("url")
                         );
                         mFollowButton.setText("Followed");
                         ChannelDao channelDao = SuperDatabase.getInstance(mContext).channelDao();
                         channelDao.insert(channel);
                         Toast.makeText(mContext, "You followed " + channel.getName(), Toast.LENGTH_LONG).show();
                     } catch (Exception ex) {
-                        Log.e(TAG, "onBindViewHolder: Error in extracting data");
+                        Log.e(TAG, "DataHolder: Error in extracting data");
                     }
                 }
             });
