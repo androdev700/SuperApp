@@ -4,18 +4,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentTransaction fragmentTransaction;
+    private FragmentTransaction mfragmentTransaction;
+    private Menu mOptionsMenu;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -24,14 +23,22 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.main_frame, new HomeFragment());
-                    fragmentTransaction.commit();
+                    if (mOptionsMenu != null) {
+                        mOptionsMenu.clear();
+                        getMenuInflater().inflate(R.menu.menu_home, mOptionsMenu);
+                    }
+                    mfragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mfragmentTransaction.replace(R.id.main_frame, new HomeFragment());
+                    mfragmentTransaction.commit();
                     return true;
                 case R.id.navigation_dashboard:
-                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.main_frame, new HomeFragment());
-                    fragmentTransaction.commit();
+                    if (mOptionsMenu != null) {
+                        mOptionsMenu.clear();
+                        getMenuInflater().inflate(R.menu.menu_discovery, mOptionsMenu);
+                    }
+                    mfragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mfragmentTransaction.replace(R.id.main_frame, new HomeFragment());
+                    mfragmentTransaction.commit();
                     return true;
             }
             return false;
@@ -48,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        mOptionsMenu = menu;
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_home, menu);
         return true;
