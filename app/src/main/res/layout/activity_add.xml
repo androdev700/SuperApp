@@ -23,7 +23,9 @@
             android:layout_height="wrap_content"
             android:hint="Name"
             android:importantForAutofill="no"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/primaryText"
+            android:textColorHint="@color/primaryText" />
 
         <EditText
             android:id="@+id/description"
@@ -31,13 +33,16 @@
             android:layout_height="wrap_content"
             android:hint="Description"
             android:importantForAutofill="no"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/primaryText"
+            android:textColorHint="@color/primaryText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Choose type of channel" />
+            android:text="Choose type of channel"
+            android:textColor="@color/primaryText" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -68,6 +73,7 @@
             android:paddingEnd="5dp"
             android:paddingBottom="10dp"
             android:text="Settings"
+            android:textColor="@color/primaryText"
             android:textSize="18sp" />
 
         <TextView
@@ -80,6 +86,7 @@
             android:paddingEnd="5dp"
             android:paddingBottom="10dp"
             android:text="Advanced Settings"
+            android:textColor="@color/primaryText"
             android:textSize="18sp" />
 
     </LinearLayout>
