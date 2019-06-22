@@ -3,7 +3,7 @@ package com.oldmen.superapp;
 public class Data {
 
     public static final String DISCOVERY_STRING = "[{\"id\":\"a1\",\"type\":\"TEXT\",\"url\":\"\",\"title\":\"Pratilipi Hackathon\",\"category\":\"Update\",\"description\":\"Know whats going on in the pratilipi hackathon\", \"members\":40, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
-            "{\"id\":\"a17\",\"type\":\"WEB\",\"url\":\"https://hindi.pratilipi.com\",\"title\":\"Pratilipi\",\"category\":\"Literature\",\"description\":\"India's largest self publishing platform\", \"members\":\"4,00,000\", \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
+            "{\"id\":\"a18\",\"type\":\"WEB\",\"url\":\"https://hindi.pratilipi.com\",\"title\":\"Pratilipi\",\"category\":\"Literature\",\"description\":\"India's largest self publishing platform\", \"members\":\"4,00,000\", \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/pratilipi.png\"}," +
             "{\"id\":\"a2\",\"type\":\"WEB\",\"url\":\"https://unacademy.com\",\"title\":\"Unacademy\",\"category\":\"Education\",\"description\":\"India's largest learning platform\", \"members\":400, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/unacademy.jpg\"}," +
             "{\"id\":\"a3\",\"type\":\"WEB\",\"url\":\"https://www.netflix.com/in/\",\"title\":\"Netflix\",\"category\":\"Entertainment\",\"description\":\"Watch anywhere\",\"rating\":4, \"members\":832, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/Netflix_icon.png\"}," +
             "{\"id\":\"a4\",\"type\":\"WEB\",\"url\":\"https://www.zomato.com\",\"title\":\"Zomato\",\"category\":\"Food\",\"description\":\"Find the best restaurants, cafés, and bars in Bengaluru\",\"rating\":4, \"members\":900, \"logo\":\"https://github.com/androdev700/SuperApp/raw/master/logos/zomato.png\"}," +
@@ -20,6 +20,16 @@ public class Data {
             "{\"id\":\"a14\",\"message\":\"2 hours done, jobless PMs can be seen roaming around\",\"time\":\"1400 Hours\"}," +
             "{\"id\":\"a15\",\"message\":\"SANDWICH TIME..\",\"time\":\"1500 Hours\"}," +
             "{\"id\":\"a16\",\"message\":\"PIZZA IS HERE..Non vegetarians, you better hurry! \",\"time\":\"1600 Hours\"}," +
-            "{\"id\":\"a15\",\"message\":\"Sakht Tea time.\",\"time\":\"1800 Hours\"}" +
+            "{\"id\":\"a17\",\"message\":\"Sakht Tea time.\",\"time\":\"1800 Hours\"}" +
+            "]";
+
+    public static final String SHARE_CHATE_STRING = "[" +
+            "{\"id\":\"a20\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote1.png\"}," +
+            "{\"id\":\"a21\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote2.png\"}," +
+            "{\"id\":\"a23\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote3.png\"}," +
+            "{\"id\":\"a24\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote4.jpg\"}," +
+            "{\"id\":\"a25\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote5.png\"}," +
+            "{\"id\":\"a26\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote6.jpg\"}," +
+            "{\"id\":\"a28\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yourquote8.png\"}" +
             "]";
 }

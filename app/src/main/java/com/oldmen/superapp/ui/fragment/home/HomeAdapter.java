@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.db.model.Channel;
 import com.oldmen.superapp.ui.activity.viewChannel.ViewChannelActivity;
@@ -50,6 +51,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
         if (channel.getChannelImage() != null) {
             Glide.with(mContext)
                     .load(channel.getChannelImage())
+                    .apply(RequestOptions.circleCropTransform())
                     .into(holder.image);
         } else {
             holder.image.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_user_light));

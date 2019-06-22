@@ -13,13 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.activity.viewChannel.ViewChannel2Activity"></activity>
         <activity
             android:name=".ui.activity.viewChannel.ViewChannelActivity"
             android:label="Pratilipi Hackathon"
             android:parentActivityName=".ui.activity.MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activity.LaunchActivity"
             android:theme="@style/LaunchTheme">

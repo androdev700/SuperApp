@@ -17,11 +17,13 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.oldmen.superapp.Data;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.db.dao.ChannelDao;
 import com.oldmen.superapp.db.handler.SuperDatabase;
 import com.oldmen.superapp.db.model.Channel;
+import com.oldmen.superapp.ui.activity.viewChannel.ViewChannel2Activity;
 import com.oldmen.superapp.ui.activity.viewChannel.ViewChannelActivity;
 
 import org.json.JSONArray;
@@ -64,7 +66,10 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
             holder.category.setText(json.getString("category"));
             holder.description.setText(json.getString("description"));
             holder.memberCount.setText(json.getString("members"));
-            Glide.with(mContext).load(json.getString("logo")).into(holder.image);
+            Glide.with(mContext)
+                    .load(json.getString("logo"))
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(holder.image);
 
             if (mChannels.contains(json.getString("id"))) {
                 holder.mFollowButton.setText("Followed");
@@ -115,7 +120,7 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                             customTabsIntent.launchUrl(mContext, Uri.parse(url));
                         } else {
                             // Open description activity
-                            Intent intent = new Intent(mContext, ViewChannelActivity.class);
+                            Intent intent = new Intent(mContext, ViewChannel2Activity.class);
                             mContext.startActivity(intent);
                         }
                     } catch (Exception ex) {

@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.oldmen.superapp.db.handler.SuperDatabase;
 import com.oldmen.superapp.db.model.Channel;
+import com.oldmen.superapp.db.model.Comments;
+import com.oldmen.superapp.db.model.Likes;
 
 import java.util.List;
 
@@ -26,5 +28,13 @@ public class HomeViewModel extends ViewModel {
 
     public List<Channel> getChannels() {
         return superDatabase.channelDao().getAllChannelsSync();
+    }
+
+    public List<Likes> getLikes() {
+        return superDatabase.likesDao().getAllLikes();
+    }
+
+    public List<Comments> getComments() {
+        return superDatabase.commentsDao().getAllComments();
     }
 }
