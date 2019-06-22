@@ -34,8 +34,13 @@ public class Channel {
     @ColumnInfo(name = "time")
     private String mTime;
 
+    @ColumnInfo(name = "created_at")
+    private Long created_at;
+
+
+
     public Channel(@NonNull String id, String name, String type, String description,
-                   String channelImage, String destinationType, String url, String time) {
+                   String channelImage, String destinationType, String url, String time, Long created_at) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
@@ -44,6 +49,7 @@ public class Channel {
         this.mDestinationType = destinationType;
         this.mUrl = url;
         this.mTime = time;
+        this.created_at = created_at;
     }
 
     public String getId() {
@@ -76,5 +82,9 @@ public class Channel {
 
     public String getTime() {
         return mTime;
+    }
+
+    public Long getCreated_at() {
+        return created_at;
     }
 }

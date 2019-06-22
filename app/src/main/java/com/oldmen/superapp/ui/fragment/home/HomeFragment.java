@@ -66,10 +66,6 @@ public class HomeFragment extends Fragment {
         homeViewModel.getChannelLiveData().observe(this, new Observer<List<Channel>>() {
             @Override
             public void onChanged(List<Channel> channels) {
-//                for (Channel channel : channels) {
-//                    Log.e("TAG", channel.getName());
-//
-//                }
                 if (channels.size() == 0) {
                     channels = cookData();
                 }
@@ -99,7 +95,8 @@ public class HomeFragment extends Fragment {
                         object.getString("image"),
                         null,
                         null,
-                        object.getString("secondaryText")
+                        object.getString("secondaryText"),
+                        System.currentTimeMillis()
                 );
 
                 channels.add(channel);

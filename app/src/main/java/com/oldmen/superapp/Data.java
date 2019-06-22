@@ -48,12 +48,12 @@ public class Data {
             "]";
 
     public static final String HOME_SCREEN_DEMO_DATA = "[" +
-            "{\"id\":\"b1\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/neetu.jpg\",\"title\":\"Neetu\",\"description\":\"Yes i am on sick leave, but i am going to a movie\",\"secondaryText\":\"5secs ago\"}," +
-            "{\"id\":\"b2\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yoga.png\",\"title\": \"Fitness\",\"description\":\"It's time to take a break and meditate for 2 mins. Deep breaths..\",\"secondaryText\":\"1min ago\"}," +
-            "{\"id\":\"b3\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/freshmenu_1.jpg\",\"title\": \"Freshmenu\",\"description\":\"You order is been picked. Clieck to track order\",\"secondaryText\":\"1min ago\"}, " +
-            "{\"id\":\"b4\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/wife.jpg\",\"title\": \"Horror at home\",\"description\":\"Missing you dear...\",\"secondaryText\":\"2mins ago\"}," +
-            "{\"id\":\"b5\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/coursera.png\",\"title\": \"Coursera\",\"description\":\"Writing Asynchronous Programs in JavaScript\",\"secondaryText\":\"3mins ago\"}, " +
+            "{\"id\":\"b7\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/giridhar.jpg\",\"title\": \"Giridhar\",\"description\":\"Yo!!! old man...\",\"secondaryText\":\"7mins ago\"}," +
             "{\"id\":\"b6\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/ptlpcofndrs.jpg\",\"title\": \"Cofounders\",\"description\":\"Ranjeet: We are going public on 2022\",\"secondaryText\":\"4mins ago\"}, " +
-            "{\"id\":\"b7\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/giridhar.jpg\",\"title\": \"Giridhar\",\"description\":\"Yo!!! old man...\",\"secondaryText\":\"7mins ago\"}" +
+            "{\"id\":\"b5\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/coursera.png\",\"title\": \"Coursera\",\"description\":\"Writing Asynchronous Programs in JavaScript\",\"secondaryText\":\"3mins ago\"}, " +
+            "{\"id\":\"b4\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/wife.jpg\",\"title\": \"Horror at home\",\"description\":\"Missing you dear...\",\"secondaryText\":\"2mins ago\"}," +
+            "{\"id\":\"b3\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/freshmenu_1.jpg\",\"title\": \"Freshmenu\",\"description\":\"You order is been picked. Clieck to track order\",\"secondaryText\":\"1min ago\"}, " +
+            "{\"id\":\"b2\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/yoga.png\",\"title\": \"Fitness\",\"description\":\"It's time to take a break and meditate for 2 mins. Deep breaths..\",\"secondaryText\":\"1min ago\"}," +
+            "{\"id\":\"b1\",\"image\":\"https://github.com/androdev700/SuperApp/raw/master/logos/neetu.jpg\",\"title\":\"Neetu\",\"description\":\"Yes i am on sick leave, but i am going to a movie\",\"secondaryText\":\"5secs ago\"}" +
             "]";
 }

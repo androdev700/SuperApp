@@ -83,7 +83,7 @@ public class AddActivity extends AppCompatActivity {
         }
 
         Channel channel = new Channel(Integer.toString((int) (Math.random() * 10000)), name,
-                type, description, null, null, null, null);
+                type, description, null, null, null, null, System.currentTimeMillis());
 
         ChannelDao channelDao = SuperDatabase.getInstance(this).channelDao();
         channelDao.insert(channel);

@@ -146,7 +146,8 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                                 object.getString("logo"),
                                 object.getString("type"),
                                 object.getString("url"),
-                                null
+                                "Now",
+                                System.currentTimeMillis()
                         );
                         mFollowButton.setText("Followed");
                         ChannelDao channelDao = SuperDatabase.getInstance(mContext).channelDao();

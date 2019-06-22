@@ -16,9 +16,9 @@ public interface ChannelDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Channel channel);
 
-    @Query("SELECT * FROM Channel")
+    @Query("SELECT * FROM Channel order by created_at desc")
     LiveData<List<Channel>> getAllChannels();
 
-    @Query("SELECT * FROM Channel")
+    @Query("SELECT * FROM Channel order by created_at desc")
     List<Channel> getAllChannelsSync();
 }
