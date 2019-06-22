@@ -5,7 +5,13 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:orientation="vertical"
-    android:paddingTop="10dp">
+    android:paddingTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -50,6 +56,30 @@
                     android:fontFamily="@font/pt_sans"
                     android:text="Music - Movies"
                     android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/rating_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pt_sans"
+                        android:text="50"
+                        android:textColor="#666666"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/pt_sans"
+                        android:text=" members"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -70,40 +100,7 @@
                 android:textColor="#119492"
                 android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="5dp"
-                android:gravity="center">
 
-                <!--<RatingBar-->
-                <!--android:id="@+id/rating_bar"-->
-                <!--android:isIndicator="true"-->
-                <!--android:numStars="5"-->
-                <!--android:stepSize="0.5"-->
-                <!--style="?android:attr/ratingBarStyleSmall"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:rating="4.5"-->
-                <!--/>-->
-
-                <TextView
-                    android:id="@+id/rating_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/pt_sans"
-                    android:text="50"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:fontFamily="@font/pt_sans"
-                    android:text=" members"
-                    android:textSize="16sp" />
-            </LinearLayout>
         </RelativeLayout>
 
     </RelativeLayout>
@@ -118,7 +115,11 @@
         android:fontFamily="@font/pt_sans"
         android:text="Bored? Enable story stream binhe on entertaining stories narrated by handpicked top creators"
         android:textColor="@color/primaryText"
+        android:maxLines="3"
+        android:ellipsize="end"
         android:textSize="16sp" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
