@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     mFragmentTransaction.commit();
                     return true;
                 case R.id.navigation_dashboard:
-                    getSupportActionBar().setTitle("Discovery");
+                    getSupportActionBar().setTitle("Discover");
                     if (mOptionsMenu != null) {
                         mOptionsMenu.clear();
                         getMenuInflater().inflate(R.menu.menu_discovery, mOptionsMenu);

@@ -9,4 +9,5 @@
 
     <color name="messages_incoming_shadow_bg_color">#d9d9d9</color>
     <color name="messages_incoming_bg_color">#d9d9d9</color>
+    <color name="border_bottom">#ECECEC</color>
 </resources>
