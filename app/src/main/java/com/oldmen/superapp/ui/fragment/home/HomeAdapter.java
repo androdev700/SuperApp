@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.oldmen.superapp.R;
 import com.oldmen.superapp.db.model.Channel;
+import com.oldmen.superapp.ui.activity.viewChannel.ViewChannel2Activity;
 import com.oldmen.superapp.ui.activity.viewChannel.ViewChannelActivity;
 
 import java.util.List;
@@ -89,8 +90,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
                             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                             CustomTabsIntent customTabsIntent = builder.build();
                             customTabsIntent.launchUrl(mContext, Uri.parse(url));
-                        } else {
+                        } else if (channel.getDestinationType().equals("IMAGE")) {
                             // Open description activity
+                            Intent intent = new Intent(mContext, ViewChannel2Activity.class);
+                            mContext.startActivity(intent);
+                        } else if (channel.getDestinationType().equals("TEXT")) {
                             Intent intent = new Intent(mContext, ViewChannelActivity.class);
                             mContext.startActivity(intent);
                         }

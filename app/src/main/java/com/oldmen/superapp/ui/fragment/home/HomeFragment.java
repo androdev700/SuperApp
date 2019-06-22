@@ -16,10 +16,17 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.oldmen.superapp.Data;
 import com.oldmen.superapp.R;
+import com.oldmen.superapp.db.dao.ChannelDao;
 import com.oldmen.superapp.db.handler.SuperDatabase;
 import com.oldmen.superapp.db.model.Channel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -63,10 +70,47 @@ public class HomeFragment extends Fragment {
 //                    Log.e("TAG", channel.getName());
 //
 //                }
+                if (channels.size() == 0) {
+                    channels = cookData();
+                }
+
                 mAdapter = new HomeAdapter(mContext, channels);
                 mRecyclerView.setAdapter(mAdapter);
                 mAdapter.notifyDataSetChanged();
+
             }
         });
+    }
+
+    private List<Channel> cookData() {
+        try {
+            JSONArray array = new JSONArray(Data.HOME_SCREEN_DEMO_DATA);
+            Log.e("HOMEFRAGMENT", "cookData: Array size : " + array.length());
+            int index = 0;
+            List<Channel> channels = new ArrayList<>(array.length());
+            while(index < array.length()) {
+                Log.e("HOMEFRAGMENT", "cookData: channel size : " + channels.size());
+                JSONObject object = array.getJSONObject(index);
+                Channel channel = new Channel(
+                        object.getString("id"),
+                        object.getString("title"),
+                        "public",
+                        object.getString("description"),
+                        object.getString("image"),
+                        null,
+                        null
+                );
+
+                channels.add(channel);
+                ChannelDao channelDao = SuperDatabase.getInstance(mContext).channelDao();
+                channelDao.insert(channel);
+                index++;
+            }
+            return channels;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("HOMEFRAGMENT", "cookData: unable to cook");
+            return null;
+        }
     }
 }

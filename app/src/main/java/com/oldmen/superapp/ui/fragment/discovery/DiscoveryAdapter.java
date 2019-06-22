@@ -118,9 +118,12 @@ public class DiscoveryAdapter extends RecyclerView.Adapter<DiscoveryAdapter.Data
                             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                             CustomTabsIntent customTabsIntent = builder.build();
                             customTabsIntent.launchUrl(mContext, Uri.parse(url));
-                        } else {
+                        } else if (object.getString("type").equals("IMAGE")) {
                             // Open description activity
                             Intent intent = new Intent(mContext, ViewChannel2Activity.class);
+                            mContext.startActivity(intent);
+                        } else if (object.getString("type").equals("TEXT")) {
+                            Intent intent = new Intent(mContext, ViewChannelActivity.class);
                             mContext.startActivity(intent);
                         }
                     } catch (Exception ex) {
