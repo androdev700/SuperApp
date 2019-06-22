@@ -6,6 +6,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
 
+
     <array name="basic_permissions">
         <item>Like</item>
         <item>Comment</item>
@@ -34,6 +35,27 @@
         <item>Add Moderator</item>
         <item>Ban Moderator</item>
         <item>Remove Moderator</item>
+    </array>
+
+    <array name="content_type">
+        <item>Audio</item>
+        <item>Video</item>
+        <item>Image</item>
+        <item>Link</item>
+    </array>
+
+    <array name="categories_allowed">
+        <item>Politics</item>
+        <item>NSFW</item>
+        <item>Religion</item>
+    </array>
+
+    <array name="service_req">
+        <item>User Sign In</item>
+        <item>Payment</item>
+        <item>Geo Location</item>
+        <item>Camera</item>
+        <item>Voice Recorder</item>
     </array>
 
 </resources>

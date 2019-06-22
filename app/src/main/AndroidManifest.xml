@@ -32,17 +32,20 @@
             android:name=".ui.activity.addChannel.AdvancedSettingsActivity"
             android:label="Advanced Settings"
             android:parentActivityName=".ui.activity.addChannel.AddActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AlertDialog"/>
         <activity
             android:name=".ui.activity.addChannel.SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".ui.activity.addChannel.AddActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AlertDialog" />
         <activity
             android:name=".ui.activity.addChannel.AddActivity"
             android:label="Create Channel"
             android:parentActivityName=".ui.activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AlertDialog" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
