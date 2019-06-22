@@ -31,7 +31,11 @@ public class Channel {
     @ColumnInfo(name = "url")
     private String mUrl;
 
-    public Channel(@NonNull String id, String name, String type, String description, String channelImage, String destinationType, String url) {
+    @ColumnInfo(name = "time")
+    private String mTime;
+
+    public Channel(@NonNull String id, String name, String type, String description,
+                   String channelImage, String destinationType, String url, String time) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
@@ -39,6 +43,7 @@ public class Channel {
         this.mChannelImage = channelImage;
         this.mDestinationType = destinationType;
         this.mUrl = url;
+        this.mTime = time;
     }
 
     public String getId() {
@@ -67,5 +72,9 @@ public class Channel {
 
     public String getUrl() {
         return mUrl;
+    }
+
+    public String getTime() {
+        return mTime;
     }
 }

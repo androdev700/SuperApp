@@ -48,6 +48,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
         Channel channel = mChannels.get(position);
         holder.title.setText(channel.getName());
         holder.description.setText(channel.getDescription());
+        holder.timeLapse.setText(channel.getTime());
 
         if (channel.getChannelImage() != null) {
             Glide.with(mContext)
@@ -70,6 +71,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
         private TextView title;
         private TextView description;
         private ImageView image;
+        private TextView timeLapse;
 
         public DataHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +80,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.DataHolder> {
             title = itemView.findViewById(R.id.title);
             description = itemView.findViewById(R.id.description);
             image = itemView.findViewById(R.id.logo);
+            timeLapse = itemView.findViewById(R.id.timeLapse);
 
             card.setOnClickListener(new View.OnClickListener() {
                 @Override

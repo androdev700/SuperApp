@@ -13,7 +13,7 @@ import com.oldmen.superapp.db.model.Channel;
 import com.oldmen.superapp.db.model.Comments;
 import com.oldmen.superapp.db.model.Likes;
 
-@Database(entities = {Channel.class, Likes.class, Comments.class}, version = 5)
+@Database(entities = {Channel.class, Likes.class, Comments.class}, version = 6)
 public abstract class SuperDatabase extends RoomDatabase {
 
     private static volatile SuperDatabase INSTANCE;

@@ -98,7 +98,8 @@ public class HomeFragment extends Fragment {
                         object.getString("description"),
                         object.getString("image"),
                         null,
-                        null
+                        null,
+                        object.getString("secondaryText")
                 );
 
                 channels.add(channel);
